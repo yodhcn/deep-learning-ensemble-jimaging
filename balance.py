@@ -5,6 +5,8 @@ from sklearn.model_selection import train_test_split
 from skimage.restoration import denoise_tv_chambolle, denoise_bilateral
 import random
 
+BASE_BALANCEADA_DIVIDIDA = 'E:/CRIC/Base balanceada dividida'
+
 def dividirEBalancearPorClasse(n_classes_balanceamento, test_size):
     pasta_ler = '..\\Base por classe\\'
     classes = os.listdir(pasta_ler) #classes
@@ -347,7 +349,8 @@ def salvar_BalanceamentoDividido(num_classes):
         cv2.imwrite(novo_nome, X_teste[x])
         
 def ler_BalanceamentoDividido(num_classes):
-    pasta_ler = '..\\Base balanceada dividida\\' + str(num_classes) + ' classes\\'
+    # pasta_ler = '..\\Base balanceada dividida\\' + str(num_classes) + ' classes\\'
+    pasta_ler = os.path.join(BASE_BALANCEADA_DIVIDIDA, str(num_classes) + ' classes')
     X_treinamento, y_treinamento, X_validacao, y_validacao, X_teste, y_teste = [], [], [], [], [], []
     for arq in os.listdir(pasta_ler + '\\Treino\\'):
         X_treinamento.append(cv2.imread(pasta_ler + '\\Treino\\' + arq))
@@ -358,4 +361,87 @@ def ler_BalanceamentoDividido(num_classes):
     for arq in os.listdir(pasta_ler + '\\Teste\\'):
         X_teste.append(cv2.imread(pasta_ler + '\\Teste\\' + arq))
         y_teste.append(arq.split('_')[1])
+    return X_treinamento, y_treinamento, X_validacao, y_validacao, X_teste, y_teste
+
+
+def class_id_filter(class_id, classifier_no):
+    """"
+    跳过无用的类别
+    """
+    # (2-3-6 classes)
+    # classifier_1
+    # - NILM - 1-2-5
+    # - classifier_2
+    #   - classifier_3 (Low-grade lesions)
+    #     - ASC-US - 0-1-1
+    #     - LSIL   - 0-1-4
+    #   - classifier_4 (High-grade lesions)
+    #     - ASC-H - 0-0-0
+    #     - HSIL  - 0-0-3
+    #     - SCC   - 0-0-2
+    if classifier_no == 2:
+        if class_id == '2':
+            class_id = None
+    elif classifier_no == 3:
+        if class_id == '1':
+            class_id = '0'
+        elif class_id == '4':
+            class_id = '1'
+        else:
+            class_id = None
+    elif classifier_no == 4:
+        if class_id == '0':
+            class_id = '0'
+        elif class_id == '3':
+            class_id = '1'
+        elif class_id != '2':
+            class_id = '2'
+        else:
+            class_id = None
+    return class_id
+
+
+def num_classes_maper(classifier_no):
+    """
+    分类器的分类数
+    """
+    if classifier_no == 1:
+        return 2
+    elif classifier_no == 2:
+        return 2
+    elif classifier_no == 3:
+        return 2
+    elif classifier_no == 4:
+        return 3
+
+
+def ler_BalanceamentoDividido2(classifier_no):
+    # 保证类间均衡
+    if classifier_no == 1:
+        num_classes = 2
+    elif classifier_no == 2:
+        num_classes = 3
+    else:
+        num_classes = 6
+    # pasta_ler = '..\\Base balanceada dividida\\' + str(num_classes) + ' classes\\'
+    pasta_ler = os.path.join(BASE_BALANCEADA_DIVIDIDA, str(num_classes) + ' classes')
+    X_treinamento, y_treinamento, X_validacao, y_validacao, X_teste, y_teste = [], [], [], [], [], []
+    for arq in os.listdir(pasta_ler + '\\Treino\\'):
+        class_id = arq.split('_')[1]
+        class_id = class_id_filter(class_id, classifier_no)
+        if class_id is not None:
+            X_treinamento.append(cv2.imread(pasta_ler + '\\Treino\\' + arq))
+            y_treinamento.append(class_id)
+    for arq in os.listdir(pasta_ler + '\\Validacao\\'):
+        class_id = arq.split('_')[1]
+        class_id = class_id_filter(class_id, classifier_no)
+        if class_id is not None:
+            X_validacao.append(cv2.imread(pasta_ler + '\\Validacao\\' + arq))
+            y_validacao.append(class_id)
+    for arq in os.listdir(pasta_ler + '\\Teste\\'):
+        class_id = arq.split('_')[1]
+        class_id = class_id_filter(class_id, classifier_no)
+        if class_id is not None:
+            X_teste.append(cv2.imread(pasta_ler + '\\Teste\\' + arq))
+            y_teste.append(class_id)
     return X_treinamento, y_treinamento, X_validacao, y_validacao, X_teste, y_teste

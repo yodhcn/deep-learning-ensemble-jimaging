@@ -1,0 +1,6 @@
+numpy
+tensorflow
+efficientnet
+scikit-learn
+scikit-image
+opencv-python

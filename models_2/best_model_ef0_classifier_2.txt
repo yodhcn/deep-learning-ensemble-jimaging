@@ -1,0 +1,55 @@
+Epoch 1/10
+105/105 [==============================] - ETA: 0s - loss: 0.4120 - recall: 0.8712
+Epoch 1: val_recall improved from -inf to 0.76077, saving model to best_model.hdf5
+105/105 [==============================] - 59s 475ms/step - loss: 0.4120 - recall: 0.8712 - val_loss: 0.9429 - val_recall: 0.7608
+Epoch 2/10
+104/105 [============================>.] - ETA: 0s - loss: 0.1535 - recall: 0.9489
+Epoch 2: val_recall improved from 0.76077 to 0.94378, saving model to best_model.hdf5
+105/105 [==============================] - 50s 474ms/step - loss: 0.1534 - recall: 0.9489 - val_loss: 0.1788 - val_recall: 0.9438
+Epoch 3/10
+104/105 [============================>.] - ETA: 0s - loss: 0.0947 - recall: 0.9688
+Epoch 3: val_recall improved from 0.94378 to 0.96172, saving model to best_model.hdf5
+105/105 [==============================] - 50s 476ms/step - loss: 0.0968 - recall: 0.9685 - val_loss: 0.1305 - val_recall: 0.9617
+Epoch 4/10
+105/105 [==============================] - ETA: 0s - loss: 0.1826 - recall: 0.9441
+Epoch 4: val_recall did not improve from 0.96172
+105/105 [==============================] - 49s 470ms/step - loss: 0.1826 - recall: 0.9441 - val_loss: 0.2752 - val_recall: 0.9294
+Epoch 5/10
+105/105 [==============================] - ETA: 0s - loss: 0.1248 - recall: 0.9637
+Epoch 5: val_recall did not improve from 0.96172
+105/105 [==============================] - 51s 482ms/step - loss: 0.1248 - recall: 0.9637 - val_loss: 1.8205 - val_recall: 0.7823
+Epoch 6/10
+105/105 [==============================] - ETA: 0s - loss: 0.2525 - recall: 0.9222
+Epoch 6: val_recall did not improve from 0.96172
+105/105 [==============================] - 52s 498ms/step - loss: 0.2525 - recall: 0.9222 - val_loss: 0.9059 - val_recall: 0.8840
+Epoch 7/10
+105/105 [==============================] - ETA: 0s - loss: 0.1433 - recall: 0.9523
+Epoch 7: val_recall did not improve from 0.96172
+105/105 [==============================] - 56s 532ms/step - loss: 0.1433 - recall: 0.9523 - val_loss: 0.2085 - val_recall: 0.9211
+Epoch 8/10
+105/105 [==============================] - ETA: 0s - loss: 0.4195 - recall: 0.9192
+Epoch 8: val_recall did not improve from 0.96172
+105/105 [==============================] - 50s 473ms/step - loss: 0.4195 - recall: 0.9192 - val_loss: 0.3742 - val_recall: 0.9103
+Epoch 9/10
+105/105 [==============================] - ETA: 0s - loss: 0.1036 - recall: 0.9658
+Epoch 9: val_recall did not improve from 0.96172
+105/105 [==============================] - 54s 515ms/step - loss: 0.1036 - recall: 0.9658 - val_loss: 0.1343 - val_recall: 0.9557
+Epoch 10/10
+105/105 [==============================] - ETA: 0s - loss: 0.1666 - recall: 0.9429
+Epoch 10: val_recall did not improve from 0.96172
+105/105 [==============================] - 55s 525ms/step - loss: 0.1666 - recall: 0.9429 - val_loss: 0.1695 - val_recall: 0.9486
+
+ ----- Resultados ------
+15/15 [==============================] - 4s 171ms/step
+[[283  16]
+ [ 15 163]]
+[[[163  15]
+  [ 16 283]]
+
+ [[283  16]
+  [ 15 163]]]
+Precisao: 0.94
+Revocação: 0.94
+F1: 0.94
+Acurácia: 0.94
+Especificidade 0.94

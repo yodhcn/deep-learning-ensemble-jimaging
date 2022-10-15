@@ -1,0 +1,75 @@
+Epoch 1/15
+35/35 [==============================] - ETA: 0s - loss: 0.9967 - recall: 0.6389
+Epoch 1: val_recall improved from -inf to 0.57040, saving model to best_model.hdf5
+35/35 [==============================] - 29s 540ms/step - loss: 0.9967 - recall: 0.6389 - val_loss: 0.8098 - val_recall: 0.5704
+Epoch 2/15
+35/35 [==============================] - ETA: 0s - loss: 0.4143 - recall: 0.8552
+Epoch 2: val_recall improved from 0.57040 to 0.61733, saving model to best_model.hdf5
+35/35 [==============================] - 17s 480ms/step - loss: 0.4143 - recall: 0.8552 - val_loss: 1.0656 - val_recall: 0.6173
+Epoch 3/15
+35/35 [==============================] - ETA: 0s - loss: 0.2366 - recall: 0.9267
+Epoch 3: val_recall improved from 0.61733 to 0.66787, saving model to best_model.hdf5
+35/35 [==============================] - 17s 487ms/step - loss: 0.2366 - recall: 0.9267 - val_loss: 0.9838 - val_recall: 0.6679
+Epoch 4/15
+35/35 [==============================] - ETA: 0s - loss: 0.1467 - recall: 0.9475
+Epoch 4: val_recall improved from 0.66787 to 0.70397, saving model to best_model.hdf5
+35/35 [==============================] - 18s 530ms/step - loss: 0.1467 - recall: 0.9475 - val_loss: 1.4737 - val_recall: 0.7040
+Epoch 5/15
+35/35 [==============================] - ETA: 0s - loss: 0.0891 - recall: 0.9629
+Epoch 5: val_recall improved from 0.70397 to 0.77617, saving model to best_model.hdf5
+35/35 [==============================] - 19s 548ms/step - loss: 0.0891 - recall: 0.9629 - val_loss: 0.7614 - val_recall: 0.7762
+Epoch 6/15
+35/35 [==============================] - ETA: 0s - loss: 0.1198 - recall: 0.9620
+Epoch 6: val_recall improved from 0.77617 to 0.82671, saving model to best_model.hdf5
+35/35 [==============================] - 18s 512ms/step - loss: 0.1198 - recall: 0.9620 - val_loss: 0.9766 - val_recall: 0.8267
+Epoch 7/15
+35/35 [==============================] - ETA: 0s - loss: 0.1167 - recall: 0.9593
+Epoch 7: val_recall did not improve from 0.82671
+35/35 [==============================] - 17s 490ms/step - loss: 0.1167 - recall: 0.9593 - val_loss: 1.0076 - val_recall: 0.8231
+Epoch 8/15
+35/35 [==============================] - ETA: 0s - loss: 0.0815 - recall: 0.9729
+Epoch 8: val_recall did not improve from 0.82671
+35/35 [==============================] - 18s 504ms/step - loss: 0.0815 - recall: 0.9729 - val_loss: 1.3532 - val_recall: 0.8051
+Epoch 9/15
+35/35 [==============================] - ETA: 0s - loss: 0.0782 - recall: 0.9756
+Epoch 9: val_recall did not improve from 0.82671
+35/35 [==============================] - 18s 509ms/step - loss: 0.0782 - recall: 0.9756 - val_loss: 1.3469 - val_recall: 0.8267
+Epoch 10/15
+35/35 [==============================] - ETA: 0s - loss: 0.0821 - recall: 0.9729
+Epoch 10: val_recall did not improve from 0.82671
+35/35 [==============================] - 18s 501ms/step - loss: 0.0821 - recall: 0.9729 - val_loss: 1.4202 - val_recall: 0.8014
+Epoch 11/15
+35/35 [==============================] - ETA: 0s - loss: 0.0637 - recall: 0.9810
+Epoch 11: val_recall did not improve from 0.82671
+35/35 [==============================] - 18s 510ms/step - loss: 0.0637 - recall: 0.9810 - val_loss: 1.0240 - val_recall: 0.8195
+Epoch 12/15
+35/35 [==============================] - ETA: 0s - loss: 0.0842 - recall: 0.9710
+Epoch 12: val_recall did not improve from 0.82671
+35/35 [==============================] - 18s 505ms/step - loss: 0.0842 - recall: 0.9710 - val_loss: 1.4689 - val_recall: 0.7906
+Epoch 13/15
+35/35 [==============================] - ETA: 0s - loss: 0.2076 - recall: 0.9538
+Epoch 13: val_recall did not improve from 0.82671
+35/35 [==============================] - 20s 559ms/step - loss: 0.2076 - recall: 0.9538 - val_loss: 1.1890 - val_recall: 0.7617
+Epoch 14/15
+35/35 [==============================] - ETA: 0s - loss: 0.2494 - recall: 0.9240
+Epoch 14: val_recall did not improve from 0.82671
+35/35 [==============================] - 20s 568ms/step - loss: 0.2494 - recall: 0.9240 - val_loss: 2.0399 - val_recall: 0.7906
+Epoch 15/15
+35/35 [==============================] - ETA: 0s - loss: 0.1791 - recall: 0.9412
+Epoch 15: val_recall did not improve from 0.82671
+35/35 [==============================] - 21s 592ms/step - loss: 0.1791 - recall: 0.9412 - val_loss: 3.4140 - val_recall: 0.6823
+
+ ----- Resultados ------
+6/6 [==============================] - 2s 114ms/step
+[[ 36  22]
+ [ 16 104]]
+[[[104  16]
+  [ 22  36]]
+
+ [[ 36  22]
+  [ 16 104]]]
+Precisao: 0.79
+Revocação: 0.79
+F1: 0.79
+Acurácia: 0.79
+Especificidade 0.79
